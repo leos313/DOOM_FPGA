@@ -1,0 +1,26 @@
+From 45289dbb9f0d905bdd7eb5d52e87d9712fc9ccb6 Mon Sep 17 00:00:00 2001
+From: Sandeep Gundlupet Raju <sandeep.gundlupet-raju@xilinx.com>
+Date: Tue, 1 Aug 2017 14:07:52 -0600
+Subject: [PATCH] Fix for gtr_sel0 polarity correct for dual lane DP
+
+Signed-off-by: Sandeep Gundlupet Raju <sandeep.gundlupet-raju@xilinx.com>
+---
+ device_tree/data/kernel_dtsi/2017.1/BOARD/zcu102-revb.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/device_tree/data/kernel_dtsi/2017.1/BOARD/zcu102-revb.dtsi b/device_tree/data/kernel_dtsi/2017.1/BOARD/zcu102-revb.dtsi
+index e1bca91..c950479 100644
+--- a/device_tree/data/kernel_dtsi/2017.1/BOARD/zcu102-revb.dtsi
++++ b/device_tree/data/kernel_dtsi/2017.1/BOARD/zcu102-revb.dtsi
+@@ -108,7 +108,7 @@
+ 		gtr_sel0 {
+ 			gpio-hog;
+ 			gpios = <0 0>;
+-			output-low; /* PCIE = 0, DP = 1 */
++			output-high; /* PCIE = 0, DP = 1 */
+ 			line-name = "sel0";
+ 		};
+ 		gtr_sel1 {
+-- 
+2.7.4
+

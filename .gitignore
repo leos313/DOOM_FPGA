@@ -1,0 +1,7 @@
+# 
+# Ignoring the following files
+#
+
+work
+test
+.Xil
