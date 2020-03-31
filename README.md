@@ -120,8 +120,12 @@ wget http://50.38.134.5/be_wads/doom1.wad
 ./src/crispy-doom-setup -iwad src/doom1.wad
 ```
   
-You perform manually the steps or, instead, run the script.
+You can perform manually the steps or, instead, run the script.
   
+ 
+### Profiling DOOM (optional)
+
+Once the game is executed and closed correctly, a new file called `gmon.out` is generated in the directory of the executable. This file is created during the execution of the game and includes information about the functions used by the game. This file could be read by the `gprof` tool which will display a flat profile.
  
 ### Doom WITH Hardware Accelerator
  
