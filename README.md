@@ -123,7 +123,11 @@ wget http://50.38.134.5/be_wads/doom1.wad
 You perform manually the steps or, instead, run the script.
   
  
+### Doom with NO Hardware Accelerator
  
+To run the DOOM with hardware accelerators, we need to use the user-space drivers of SDSoC to send/receive data to/from the FPGA. The kernel-space drivers were already enabled when creating the system (The hack comes from the Xilinx’s documentation: “SDSoC Environment Platform Development Guide UG1146 (v2017.4) January 26, 2018” and was adapted for our purpose. In the document, it is used with Petalinux. However, the use of Petalinux is avoided in this work; it consists of creating a new node in the device tree that will compile and add the kernel module needed by the SDSoC user-space driver).
+ 
+...Under construction 
  
  
  
