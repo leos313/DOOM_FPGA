@@ -1,35 +1,38 @@
 /* ----------------------------------------------------------------------------
  * ------------------------- Doom TFM (CEI 2017/2018)--------------------------
  * ----------------------------------------------------------------------------
- * 	Stretch2x hardware Accelerator project
- * 		File: - "stretch2x_sw.h"
+ * 	Stretch4x Accelerator project
+ * 		File: - "stretch4x_hw.h"
  *
  * ----------------------------------------------------------------------------
  * Author:  David Lima (davidlimaastor@gmail.com)
  *
  *
- * TODO:
+ * TODO: Check .cpp file to see TODOs
  *
  * CHANGELOG:
  *
  *---------------------------------------------------------------------------*/
-#ifndef STRETCH2_SW_H
-#define STRETCH2_SW_H
+#ifndef STRETCH4_HW_H
+#define STRETCH4_HW_H
 
-
-#include <inttypes.h>
-
-/*----------------------------- Type Definitions ----------------------------*/
-typedef uint8_t byte;
-
+#include "doomtype.h"
 
 /*------------------------- Constant Definitions ----------------------------*/
-#define SCREENWIDTH  (640)
-#define SCREENHEIGHT (400)
+/*
+ *  Screen resolutions
+ */
+// #define SCREENWIDTH  (320) // Screen width
+// #define SCREENHEIGHT (200) // Screen height
+// #define w_out        (1280)// Output width
+// #define h_out        (960) // output height
+// #define LINES		 (5)   // lines written
+typedef byte IN;
+typedef byte OUT;
 
 
 /*----------------------- Functions prototypes ------------------------------*/
-void I_Stretch2x_SW(int x1, int y1, int x2, int y2);
+void Stretch4x(int hSizeInputSlice, int wSizeInputSlice, IN *srcFrame, OUT *videoFrame);
 
 
-#endif // STRETCH2X_SW_H
+#endif // STRETCH4X_HW_H
