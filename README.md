@@ -54,3 +54,79 @@ $ source desktop_image_zcu102.sh
  4. choose Vivado version `2018.1`. If you use other Vivado version, you may need to modify the script.
  5. use an empty, just-created folder for storing the created files to be copied on an SD-card.
  6. follow the instruction of the script.
+ 
+## Run the Game (on the OS of the Zynq Ultrascale+)
+
+Let's do that in two steps: 
+ * first we run the game with no hardware accelerators
+ * then we provide hardware accelerators and how to run it on the created system.
+
+### Doom with NO Hardware Accelerator
+
+The steps that must be done in order to execute the game are the same in both cases, but in the case of make the profiling in the platform, it is necessary to add an extra CFLAG to the makefiles due to the default configuration of the GCC compiler in the platform. These steps are:
+
+  1. Download the source code of the Crispy-DOOM from its official repository, and the shareware version of the game content.
+ 
+  2. Install the dependencies. They are the same as de chocolate-doom source port, which is in the Debian official repositories, so we can ask the apt-get command to install them.
+  
+  3. Generate the configuration files using the `autoreconf` command.
+  
+  4. Generate the makefiles executing the configuration files generated above. If the profiling is going to be executed, first the -pg flag have to be added to to the CFLAGS environmental variable used by the gcc compiler. This will instrument the code so that gprof, which is a performance analysis tool for Unix applications, will report detailed information about the execution of the game. In addition, if it is going to be executed in the ZCU102 platform, the -no-pie flag must be added too. This is due to the default configuration of the platform gcc compiler, which generates pie shared object binaries, although they run as a normal executable would.
+  
+  5. Compile the source code with the `make` command. This will generate the executable file of the game inside the `src/` directory.
+  
+  6. Execute the game giving the WAD file path as an argument, which is the file that contains the shareware version of the game. It is recommended to run first the setup executable to select the resolution of the window and other optional features.
+  
+The following bash script performs the steps described above:
+
+```
+#!/bin/sh
+
+# Install dependencies
+sudo -H apt-get install build-essential automake
+sudo -H apt-get build-dep chocolate-doom
+
+# Clone repo
+git clone https://github.com/fabiangreffrath/crispy-doom.git
+cd crispy-doom
+
+# Checkout version
+git checkout -b wb crispy-doom-3.0
+
+# Generate configuration files
+autoreconf -fiv
+
+# Export environmental variables
+export CFLAGS='-pg -no-pie'
+
+# Generate makefiles
+./configure
+
+# Compile with maximum cores
+make -j$(nproc)
+
+# Downloads the .WAD and executes the game (ID Doom archive)
+wget http://50.38.134.5/be_wads/doom1.wad
+./src/crispy-doom-setup -iwad src/doom1.wad
+```
+  
+You perform manually the steps or, instead, run the script.
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
