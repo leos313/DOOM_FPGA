@@ -65,7 +65,15 @@ Let's do that in two steps:
 
 ### Doom with NO Hardware Accelerator
 
-The steps that must be done in order to execute the game are the same in both cases, but in the case of make the profiling in the platform, it is necessary to add an extra CFLAG to the makefiles due to the default configuration of the GCC compiler in the platform. These steps are:
+If you want to just play the game, copy the script `.../download_and_compile_DOOM/DOOM_download_compile.sh` on the board and run it:
+
+```
+$ source DOOM_download_compile.sh
+```
+
+You can also perform the steps manually.
+
+The steps that must be done in order to execute the following. However, in order to profile the application, it is necessary to add an extra CFLAG to the makefiles due to the default configuration of the GCC compiler in the platform. These steps are:
 
   1. Download the source code of the Crispy-DOOM from its official repository, and the shareware version of the game content.
  
