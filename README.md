@@ -126,6 +126,11 @@ You can perform manually the steps or, instead, run the script.
 ### Profiling DOOM (optional)
 
 Once the game is executed and closed correctly, a new file called `gmon.out` is generated in the directory of the executable. This file is created during the execution of the game and includes information about the functions used by the game. This file could be read by the `gprof` tool which will display a flat profile.
+
+The result will look like this(*):
+
+
+**(*)PLEASE NOTE: depending on the DOOM version choosen, you may have different results. With Vanilla DOOM and Chocolate-DOOM, we have obtained different results. The same function in one case uses 38% of the CPU time and, in the other, the 68% of the CPU time. However, this is the function which is worth to be accelerated!!**
  
 ### Doom WITH Hardware Accelerator
  
