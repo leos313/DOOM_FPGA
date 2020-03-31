@@ -30,6 +30,8 @@ Cite the work with the following reference:
 
 For the original published paper, use the following [link](https://link.springer.com/chapter/10.1007/978-3-030-44534-8_11).
 
+Some more details can be found in the Master Thesis of David Lima using [this link](https://github.com/Limiloiko/TFM_DOOM).
+
 ## What do You Need?
 
  1. a Linux-based OS (we tested everything on Xubuntu 16.04, 18.04, and Mint).
