@@ -157,6 +157,8 @@ The file are located in `project_sdsoc > Debug > _sds > swstub` and are `cf_stub
 
 * The bitstream that you have alredy created.
 
+Now the next steps are:
+
 * Turn on your platform with the SD burned. Move the created bitstream in the folder `/lib/firmware` of the platform.
 
 * load the bitstream by using this instruction:
