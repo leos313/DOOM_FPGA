@@ -137,13 +137,13 @@ The result will look like this(*):
  
 To run the DOOM with hardware accelerators, we need to use the user-space drivers of SDSoC to send/receive data to/from the FPGA. The kernel-space drivers were already enabled when creating the system (The hack comes from the Xilinx’s documentation: “SDSoC Environment Platform Development Guide UG1146 (v2017.4) January 26, 2018” and was adapted for our purpose. In the document, it is used with Petalinux. However, the use of Petalinux is avoided in this work; it consists of creating a new node in the device tree that will compile and add the kernel module needed by the SDSoC user-space driver).
 
- 1. Create the hardware bitstream:
+* Create the hardware bitstream:
  
  Open `Vivado SDSoC 2018.1` (or `Vivado SDSoC 2017.1`)  and import the files located in the folder `.../SDSoC_src` of this repository. Following any SDSoC tutorial, chose the target platform (in our case, the ZCU102). Chose the frequency (higher = faster while with a lower frequency, you may use less energy; see the ARC2020 paper for this analysis). The SDSoC will, so, perform the hardware synthesis and will create an SD image for you to test the TestBanch code we have also provided.
  
 You can find the complete instruction for creating the hardware accelerators and the APIs to mange them in `SDSoC_scr > README_SDSOC.md`. Use this [link](https://github.com/leos313/DOOM_FPGA/blob/master/SDSoC_src/README_SDSOC.md). **Please note: if you want to use different number of accelerators or a different working frequency (as we did for the ARC2020), you are free of doing it. If you want to test other solutions, you are also welcome! Let us know your improvements!!**
 
-2. Now that you have the bitstream, you need to use it within the DOOM. The created bitstream is in the folder `project_sdsoc > sd_card > _sds > _p0_.bin`. There is just one bitstream with all the accelerators in the same floorplan.  
+* Now that you have the bitstream, you need to use it within the DOOM. The created bitstream is in the folder `project_sdsoc > sd_card > _sds > _p0_.bin`. There is just one bitstream with all the accelerators in the same floorplan.  
 
 #### Re-compiling the game including HW accelerators
 
@@ -154,6 +154,16 @@ In order to compile the Crispy-DOOM with the hardware functions, the following f
 * The shared library file, which includes the stub function and its dependencies, such as the information of the hardware addresses.
 
 The file are located in `project_sdsoc > Debug > _sds > swstub` and are `cf_stub.c`, `cf_stub.h`, `portinfo.c`, `portinfo.h`, `Stretch4x.cpp`, and the static library file `.a` (`libxlnk_stub.a` and `libdoom_hardware_v00.a`). **Please note that your names can be a bit different, depending on the project name you has used).**
+
+* The bitstream that you have alredy created.
+
+* Turn on your platform with the SD burned. Move the created bitstream in the folder `/lib/firmware` of the platform.
+
+* load the bitstream by using this instruction:
+
+`echo _p0_.bin > /sys/class/fpgma_manager/fpga0/firmware`
+ 
+ You have just loaded the bitstream into your FPGA. The system was already prepared to handle the reconfiguration at runtime (you have performed this steps when creating the system running our scripts).
  
  **...still under construction**
  
