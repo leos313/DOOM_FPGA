@@ -139,8 +139,9 @@ To run the DOOM with hardware accelerators, we need to use the user-space driver
 
  1. Create the hardware bitstream:
  
- Open `Vivado SDSoC 2018.1` and import the files located in the folder `.../SDSoC_src` of this repository. Following any SDSoC tutorial, chose the target platform (in our case, the ZCU102). Chose the frequency (higher = faster while with a lower frequency, you may use less energy; see the ARC2020 paper for this analysis). The SDSoC will, so, perform the hardware synthesis and will create an SD image for you to test the TestBanch code we have also provided.
+ Open `Vivado SDSoC 2018.1` (or `Vivado SDSoC 2017.1`)  and import the files located in the folder `.../SDSoC_src` of this repository. Following any SDSoC tutorial, chose the target platform (in our case, the ZCU102). Chose the frequency (higher = faster while with a lower frequency, you may use less energy; see the ARC2020 paper for this analysis). The SDSoC will, so, perform the hardware synthesis and will create an SD image for you to test the TestBanch code we have also provided.
  
+You can find the complete instruction for creating the hardware accelerators and the APIs to mange them with the file in `SDSoC_scr > README_SDSOC.md`. Use this [link](https://github.com/leos313/DOOM_FPGA/blob/master/SDSoC_src/README_SDSOC.md).
  
  **...still under construction**
  
