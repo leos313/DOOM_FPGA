@@ -34,4 +34,5 @@ To create the hardware accelerators and the APIs to manage them, please use the 
 
 ![ ](https://github.com/leos313/DOOM_FPGA/blob/master/images/project_setup.png  "setup")
 
+10. Finally, inside the folder `> Debug > sd_card` you can find the files ready to be tested on the Ultrascale+. It is just a test to verify that the hardware you have just created works properly. Noe you need to integrate the hardware functionality into the DOOM. See the main readme for the last part of this tutorial.
 
