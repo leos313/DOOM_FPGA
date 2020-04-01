@@ -167,6 +167,37 @@ Now the next steps are:
  
  You have just loaded the bitstream into your FPGA. The system was already prepared to handle the reconfiguration at runtime (you have performed this steps when creating the system running our scripts).
  
+* create two folder in your platform: `hardware_library` and `hardware_include`. Move the `.h` and `.c` in the include folder. Move the `.a` in the library folder.
+
+From a termial, export new environment variables:
+
+```
+export LD_LIBRARY_PATH=LD_LIBRARY_PATH:$PWD/src/hadrware_library
+
+export LDFLAGS='-L/home/documents/crispy/src/hardware_library/'
+
+export LIBS="-lpthread -l<your_library_name>"
+
+export CPPFLAGS='-I/home/documents/crispy/src/hardware_include/'
+
+export CFLAGS='-pg -no-pie'
+
+```
+
+Now, from the game folder your are ready to generete the makefile and run the compilation:
+
+```
+./configure
+
+make -j$(nproc)
+
+# To download the .WAD and execute the game
+wget http://50.38.134.5/be_wads/doom1.wad
+./src/crispy-doom-setup -iwad src/doom1.wad
+```
+ 
+**Please, be careful to the name of the files, folders, and libraries. I am sure that you will have different names and different paths!!**
+ 
  **...still under construction**
  
  
