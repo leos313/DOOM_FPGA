@@ -149,7 +149,7 @@ You can find the complete instruction for creating the hardware accelerators and
 
 #### Re-compiling the game including HW accelerators
 
-Now that the hardware function is checked in a Linux environment, the next step is to implement it in the Crispy-DOOM source code. To do this, another SDSoC utility is used, which is the creation of a C library that includes the software stub functions. Thanks to this, other applications can be compiled using these hardware
+The next step is to implement it in the Crispy-DOOM source code. To do this, another SDSoC utility is used, which is the creation of a C library that includes the software stub functions. Thanks to this, other applications can be compiled using these hardware
 modules. Of course, while the bitstream is loaded in the FPGA.
 In order to compile the Crispy-DOOM with the hardware functions, the following files must be added to the game source repository:
 
@@ -171,6 +171,8 @@ Now the next steps are:
  
 * create two folder in your platform: `hardware_library` and `hardware_include`. Move the `.h` and `.c` in the include folder. Move the `.a` in the library folder.
 
+*
+
 From a termial, export new environment variables:
 
 ```
@@ -186,7 +188,14 @@ export CFLAGS='-pg -no-pie'
 
 ```
 
-Now, from the game folder your are ready to generete the makefile and run the compilation:
+* find the fuction `Stretch4x` within the game code and substitute it with the new create stub function which passes the data to the FPGA:
+
+```
+_p0_Stretch4x1_async_1(200, 320, bytes_img_in + 0*320*sizeof(byte), bytes_img_out + 0*1280*sizeof(byte));
+```
+If the HW accelerator is just one, just replacing the original function with the line we above, it is enough. If you want to use more accelerators, remebed to devide the buffure in many pieces.
+
+Now, from the game folder, you are ready to generete the makefile and run the compilation:
 
 ```
 ./configure
