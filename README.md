@@ -195,6 +195,29 @@ _p0_Stretch4x1_async_1(200, 320, bytes_img_in + 0*320*sizeof(byte), bytes_img_ou
 ```
 If the HW accelerator is just one, just replacing the original function with the line we above, it is enough. If you want to use more accelerators, remebed to devide the buffure in many pieces.
 
+For example, if you use 8 HW accelerators, your code should look like this:
+
+```
+_p0_Stretch4x1_async_1(25, 320, bytes_img_in + 0*320*sizeof(byte), bytes_img_out + 0*1280*sizeof(byte));
+
+_p0_Stretch4x2_async_2(25, 320, bytes_img_in + 25*320*sizeof(byte), bytes_img_out + 120*1280*sizeof(byte));
+
+_p0_Stretch4x1_async_3(25, 320, bytes_img_in + 50*320*sizeof(byte), bytes_img_out + 240*1280*sizeof(byte));
+
+_p0_Stretch4x1_async_4(25, 320, bytes_img_in + 75*320*sizeof(byte), bytes_img_out + 360*1280*sizeof(byte));
+
+_p0_Stretch4x1_async_5(25, 320, bytes_img_in + 100*320*sizeof(byte), bytes_img_out + 480*1280*sizeof(byte));
+
+_p0_Stretch4x1_async_6(25, 320, bytes_img_in + 125*320*sizeof(byte), bytes_img_out + 600*1280*sizeof(byte));
+
+_p0_Stretch4x1_async_7(25, 320, bytes_img_in + 150*320*sizeof(byte), bytes_img_out + 720*1280*sizeof(byte));
+
+_p0_Stretch4x1_async_8(25, 320, bytes_img_in + 175*320*sizeof(byte), bytes_img_out + 840*1280*sizeof(byte));
+
+```
+
+If you want more details on the analysis of the paper, see this [tutorial](https://preesm.github.io/tutos/sdsoc/) and the from page 30 to 38 of [David Lima Master Thesis](https://github.com/Limiloiko/TFM_DOOM).
+
 Now, from the game folder, you are ready to generete the makefile and run the compilation:
 
 ```
