@@ -193,7 +193,7 @@ export CFLAGS='-pg -no-pie'
 ```
 _p0_Stretch4x1_async_1(200, 320, bytes_img_in + 0*320*sizeof(byte), bytes_img_out + 0*1280*sizeof(byte));
 ```
-If the HW accelerator is just one, just replacing the original function with the line we above, it is enough. If you want to use more accelerators, remebed to devide the buffure in many pieces.
+If the HW accelerator is just one, just replace the original function with the line above, it is enough. If you want to use more accelerators, remebed to devide the buffurs in many pieces.
 
 For example, if you use 8 HW accelerators, your code should look like this:
 
