@@ -145,6 +145,15 @@ You can find the complete instruction for creating the hardware accelerators and
 
 2. Now that you have the bitstream, you need to use them within the DOOM. The created bitstream is in the folder `project_sdsoc > sd_card > _sds > _p0_.bin`. There is just one bitstream with all the accelerators in the same floorplan.  
 
+#### Re-compiling the game including HW accelerators
+
+Now that the hardware function is checked in a Linux environment, the next step is to implement it in the Crispy-DOOM source code. To do this, another SDSoC utility is used, which is the creation of a C library that includes the software stub functions. Thanks to this, other applications can be compiled using these hardware
+modules. Of course, while the bitstream is loaded in the FPGA.
+In order to compile the Crispy-DOOM with the hardware functions, the following files must be added to the game source repository:
+
+* The shared library file, which includes the stub function and its dependencies, such as the information of the hardware addresses.
+
+The file are located in `project_sdsoc > Debug > _sds > swstub` and are `cf_stub.c`, `cf_stub.h`, `portinfo.c`, `portinfo.h`, `Stretch4x.cpp`, and the static library file `.a` (`libxlnk_stub.a` and `libdoom_hardware_v00.a`). **Please note that your names can be a bit different, depending on the project name you has used).**
  
  **...still under construction**
  
