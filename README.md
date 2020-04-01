@@ -197,9 +197,16 @@ wget http://50.38.134.5/be_wads/doom1.wad
 ```
  
 **Please, be careful to the name of the files, folders, and libraries. I am sure that you will have different names and different paths!!**
+
+If you find problems, report them using the [issue page](https://github.com/leos313/DOOM_FPGA/issues).
  
- **...still under construction**
- 
+ **We will try to improve the tutorial in our free time. If you find some problem, just trigger an action.**
+
+
+Authors:
+
+Leonardo Suriano
+David Lima
  
  
  
