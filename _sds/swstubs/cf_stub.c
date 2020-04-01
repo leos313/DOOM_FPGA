@@ -1,0 +1,45 @@
+#include <sds_incl.h>
+#include "cf_stub.h"
+
+cf_request_handle_t _p0_request_0;
+cf_request_handle_t _p0_request_1;
+cf_request_handle_t _p0_request_2;
+cf_request_handle_t _p0_request_3;
+cf_request_handle_t _p0_request_4;
+cf_request_handle_t _p0_request_5;
+cf_request_handle_t _p0_request_6;
+cf_request_handle_t _p0_request_7;
+cf_request_handle_t _p0_request_8;
+cf_request_handle_t _p0_request_9;
+cf_request_handle_t _p0_request_10;
+cf_request_handle_t _p0_request_11;
+cf_request_handle_t _p0_request_12;
+cf_request_handle_t _p0_request_13;
+cf_request_handle_t _p0_request_14;
+cf_request_handle_t _p0_request_15;
+cf_request_handle_t _p0_request_16;
+cf_request_handle_t _p0_request_17;
+cf_request_handle_t _p0_request_18;
+cf_request_handle_t _p0_request_19;
+cf_request_handle_t _p0_request_20;
+cf_request_handle_t _p0_request_21;
+cf_request_handle_t _p0_request_22;
+cf_request_handle_t _p0_request_23;
+cf_request_handle_t _p0_request_24;
+cf_request_handle_t _p0_request_25;
+cf_request_handle_t _p0_request_26;
+cf_request_handle_t _p0_request_27;
+cf_request_handle_t _p0_request_28;
+cf_request_handle_t _p0_request_29;
+cf_request_handle_t _p0_request_30;
+cf_request_handle_t _p0_request_31;
+
+unsigned int _p0_Stretch4x8_async_8_num_videoFrame;
+unsigned int _p0_Stretch4x7_async_7_num_videoFrame;
+unsigned int _p0_Stretch4x6_async_6_num_videoFrame;
+unsigned int _p0_Stretch4x5_async_5_num_videoFrame;
+unsigned int _p0_Stretch4x4_async_4_num_videoFrame;
+unsigned int _p0_Stretch4x3_async_3_num_videoFrame;
+unsigned int _p0_Stretch4x2_async_2_num_videoFrame;
+unsigned int _p0_Stretch4x1_async_1_num_videoFrame;
+
