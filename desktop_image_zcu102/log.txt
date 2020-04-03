@@ -12,8 +12,8 @@ Checking dependencies ...
 Setting environment variables and working directory ...
 Type yout Xilinx installation directory:
 /opt is the default:Type path for the working directory:
-The directory /home/leonardo/Documents/DOOM/desktop_image_zcu102//home/leonardo/Documents/DOOM/WORKING_DIR is not empty, please choose different name:
-The directory /home/leonardo/Documents/DOOM/desktop_image_zcu102//home/leonardo/Documents/DOOM/WORKING_DIR is not empty, please choose different name:
+The directory is not empty, please choose different name:
+The directory is not empty, please choose different name:
 Type in your Xilinx Vivado tool version.
 2018.1 is the only compatible
 
