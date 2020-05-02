@@ -237,9 +237,14 @@ If you find problems, report them using the [issue page](https://github.com/leos
  **We will try to improve the tutorial in our free time. If you find some problem, just trigger an action.**
 
 
-Authors:
+# WAD file
+
+In order to download the WAD file, we have used the new link [here](https://www.pc-freak.net/blog/doom-1-doom-2-doom-3-game-wad-files-for-download-playing-doom-on-debian-linux-via-freedoom-open-source-doom-engine/). Among all the version, the *doom1.wad* is the working file for us. The old link is not working anymore.
+
+**Authors:**
 
 Leonardo Suriano
+
 David Lima
  
  
