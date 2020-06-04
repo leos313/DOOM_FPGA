@@ -33,6 +33,8 @@ For the original published paper, use the following [link](https://link.springer
 
 Some more details can be found in the Master Thesis of David Lima using [this link](https://github.com/Limiloiko/TFM_DOOM).
 
+Also on [Hackster](https://www.hackster.io/electronicsleonardo/doom-with-hardware-accelerators-on-fpga-d1733f) you can find some of other information.
+
 ## What do You Need?
 
  1. a Linux-based OS (we tested everything on Xubuntu 16.04, 18.04, and Mint).
