@@ -1,7 +1,8 @@
 # Accelerating a Classic 3D Video Game (The DOOM) on Heterogeneous Reconfigurable MPSoCs
 
-## Introduction
+**The repo containing the game with HW accelerator on the FPGA can be found [here](https://github.com/leos313/crispy-doom).**
 
+## Introduction
 
 
 This repository contains all the instructions and the scripts necessary to run the 3D Video Game DOOM on a platform where an FPGA will accelerate the execution of some portion of the compiled code.
